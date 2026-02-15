@@ -31,7 +31,7 @@
   <header class="page-header">
     <div class="container">
       <h1 class="fade-in">How This Site Was <span class="gradient-text">Built</span></h1>
-      <p class="fade-in">This entire landing page was created using Claude Code — Anthropic's AI-powered command-line tool. Here's how it came together.</p>
+      <p class="fade-in">This entire landing page was created using Claude Code — Anthropic's AI-powered command-line assistant. Here's how it came together.</p>
     </div>
   </header>
 
@@ -41,97 +41,97 @@
     <!-- Tool Overview -->
     <section class="content-section fade-in">
       <h2><span class="gradient-text">Tool Overview</span></h2>
-      <p><strong>Claude Code</strong> is an agentic coding tool that lives in your terminal. You give it a task in natural language, and it plans, writes, edits, and executes code — using your real filesystem, running real shell commands, and iterating based on results.</p>
-      <p>It doesn't generate code in a chat bubble for you to copy-paste. It directly creates files, edits them in place, runs <code>git</code> commands, and deploys — acting as a collaborator that happens to operate at the speed of an LLM.</p>
-      <p>For this project, Claude Code handled everything: file creation, CSS styling, JavaScript logic, git operations, and GitHub Pages deployment. The human's role was to provide the plan and approve actions along the way.</p>
+      <p><strong>Claude Code</strong> is an AI coding assistant that works in the terminal. You describe what you want in plain language, and it can plan the work, create and edit files, run commands, and improve the result based on what happens.</p>
+      <p>Instead of just suggesting code for you to copy and paste, it can do the work directly in your project: update files, run <code>git</code> commands, and publish changes.</p>
+      <p>For this project, Claude Code handled the full build: creating files, styling the page, adding interactivity, running git steps, and deploying to GitHub Pages. The human set direction and approved actions along the way.</p>
     </section>
 
     <!-- Prompting Approach -->
     <section class="content-section fade-in">
       <h2>The <span class="gradient-text">Prompting Approach</span></h2>
-      <p>Getting a polished result from an AI coding tool isn't about writing one perfect prompt — it's about structuring the conversation. Here's the general strategy that worked:</p>
+      <p>Getting a polished result from an AI coding assistant is less about one "perfect" prompt and more about guiding the conversation clearly. Here's the strategy that worked:</p>
 
       <h3>1. Start with the big picture</h3>
-      <p>The first prompt described the goal at a high level: "Create a polished demo landing page to showcase Claude Code's capabilities." This let the AI ask clarifying questions rather than making assumptions.</p>
+      <p>The first prompt explained the goal at a high level: "Create a polished demo landing page to showcase Claude Code's capabilities." That gave the AI room to ask clarifying questions instead of guessing.</p>
 
       <h3>2. Make decisions upfront</h3>
-      <p>Before writing any code, key decisions were locked in: tech stack (vanilla HTML/CSS/JS), visual style (dark modern), sections to include, and hosting (GitHub Pages). This prevented mid-stream pivots that waste time.</p>
+      <p>Before writing code, the key decisions were set: technology (plain HTML/CSS/JS), visual style (dark modern), sections to include, and hosting (GitHub Pages). This avoided time-consuming changes later.</p>
 
       <h3>3. Provide a structured plan</h3>
-      <p>Rather than vague instructions, the implementation was laid out as a numbered list of concrete steps — create repo, build each file, deploy. This gives the AI clear checkpoints and prevents it from trying to do everything at once.</p>
+      <p>Instead of vague instructions, the work was mapped as a simple step-by-step list — create the repo, build each file, deploy. This gave the AI clear checkpoints and kept it focused.</p>
 
       <h3>4. Let the AI handle details</h3>
-      <p>The plan specified <em>what</em> each section should contain but didn't dictate exact HTML or pixel-perfect CSS. Giving the AI room to make implementation decisions (color values, spacing, SVG icons) plays to its strengths.</p>
+      <p>The plan defined <em>what</em> each section should include, without prescribing every exact detail. Giving the AI room to choose spacing, colors, and icons played to its strengths.</p>
 
       <h3>5. Iterate if needed</h3>
-      <p>After the initial build, you can review and refine — "make the gradient more subtle," "add more spacing to the pricing cards," etc. Each iteration is fast because the AI has full context.</p>
+      <p>After the first version was ready, small refinements could be requested — "make the gradient more subtle" or "add space to the pricing cards." Each round was quick because the AI already had context.</p>
     </section>
 
     <!-- Tech Stack Decisions -->
     <section class="content-section fade-in">
       <h2>Tech Stack <span class="gradient-text">Decisions</span></h2>
-      <p>Every choice was made to optimize for speed-to-live-site. Here's the reasoning:</p>
+      <p>Every choice was made to get from idea to live website quickly. Here's why:</p>
 
       <h3>HTML/CSS/JS vs. React/Frameworks</h3>
       <div class="pros-cons">
         <div class="pro">
           <strong>Pros</strong>
-          <p>Zero build step. No <code>npm install</code>, no bundler config, no waiting for compilation. Files work the moment they exist. GitHub Pages serves them directly.</p>
+          <p>No build setup needed. No <code>npm install</code>, no bundler configuration, no compile wait time. The files work immediately, and GitHub Pages can host them directly.</p>
         </div>
         <div class="con">
           <strong>Cons</strong>
-          <p>No component reuse — the nav is duplicated across pages. No hot module replacement during development. Manual responsive styling.</p>
+          <p>Less built-in convenience — for example, the navigation is duplicated across pages, responsive behavior is manual, and there are fewer developer shortcuts.</p>
         </div>
       </div>
-      <p><strong>Why chosen:</strong> For a two-page demo site, the overhead of a framework (setup, dependencies, build pipeline) would take longer than the time it saves. Vanilla HTML/CSS/JS is the fastest path from zero to deployed.</p>
+      <p><strong>Why chosen:</strong> For a two-page demo site, framework setup would likely take longer than any time it saved. Plain HTML/CSS/JS was the quickest route from zero to deployed.</p>
 
       <h3>Dark Modern vs. Light/Colorful</h3>
       <div class="pros-cons">
         <div class="pro">
           <strong>Pros</strong>
-          <p>High visual impact. Gradient accents pop against dark backgrounds. Matches the aesthetic of tools developers already respect (Linear, Vercel, Raycast). Feels premium.</p>
+          <p>Strong visual impact. Gradient accents stand out on dark backgrounds. The look feels modern and premium.</p>
         </div>
         <div class="con">
           <strong>Cons</strong>
-          <p>Accessibility requires more care — contrast ratios need verification. Some users prefer light themes. Dark-on-dark borders can look muddy if not tuned.</p>
+          <p>Accessibility needs extra attention, especially color contrast. Some people prefer light themes. Dark-on-dark details can look unclear if not tuned carefully.</p>
         </div>
       </div>
-      <p><strong>Why chosen:</strong> This page is a portfolio piece / speed test, not a production app. The dark modern aesthetic creates the strongest first impression for a developer audience and is what people expect from a "cutting-edge" tool demo.</p>
+      <p><strong>Why chosen:</strong> This is a portfolio/speed demo, not a production app. The dark modern style created the strongest first impression for the intended audience.</p>
 
       <h3>GitHub Pages vs. Other Hosting</h3>
       <div class="pros-cons">
         <div class="pro">
           <strong>Pros</strong>
-          <p>Free. Zero configuration — just push to <code>main</code> and enable Pages. Tightly integrated with the repo. Custom domain support if needed later.</p>
+          <p>Free and simple. Push to <code>main</code>, enable Pages, and the site is live. It works naturally with the repo and supports custom domains later if needed.</p>
         </div>
         <div class="con">
           <strong>Cons</strong>
-          <p>Static files only (no server-side logic, no API routes). Build pipeline options are limited. CDN is decent but not as fast as Vercel/Cloudflare.</p>
+          <p>Best for static sites only (no server-side logic or API routes). Build options are more limited than some other platforms.</p>
         </div>
       </div>
-      <p><strong>Why chosen:</strong> Since this is a static site with no backend, GitHub Pages is the fastest path from <code>git push</code> to live URL. Literally one API call to enable it.</p>
+      <p><strong>Why chosen:</strong> Because this site is fully static, GitHub Pages was the fastest path from <code>git push</code> to a live URL.</p>
     </section>
 
     <!-- Why No Extra Tooling -->
     <section class="content-section fade-in">
       <h2>Why <span class="gradient-text">No Extra Tooling</span></h2>
-      <p>This project was built entirely with Claude Code's built-in capabilities:</p>
+      <p>This project was built entirely with Claude Code's built-in features:</p>
       <ul>
         <li><strong>File Write/Edit</strong> — to create and modify HTML, CSS, and JS files</li>
         <li><strong>Bash</strong> — to run <code>git</code> and <code>gh</code> CLI commands for repo creation and deployment</li>
       </ul>
-      <p>No MCP servers, no external skill packs, no browser automation, no design tools. Why?</p>
+      <p>No MCP servers, no external skill packs, no browser automation, and no separate design tools. Why?</p>
       <ul>
-        <li><strong>Setup time kills speed.</strong> Configuring an MCP server or installing a skill pack takes minutes that defeat the purpose of a speed demo.</li>
-        <li><strong>Vanilla HTML/CSS/JS doesn't need build tooling.</strong> There's nothing to compile, transpile, or bundle. The files work as-is.</li>
-        <li><strong>The constraint proves the point.</strong> If you can build a polished, deployed landing page with just file editing and shell commands, the tool is powerful enough for serious work.</li>
+        <li><strong>Setup time slows things down.</strong> Configuring extra systems takes time, which works against a speed demo.</li>
+        <li><strong>Plain HTML/CSS/JS doesn't require build tooling.</strong> Nothing needs to be compiled or bundled, so files run as-is.</li>
+        <li><strong>The constraint makes the point.</strong> If a polished landing page can be built and deployed with basic file editing and shell commands, the tool is capable of serious work.</li>
       </ul>
     </section>
 
     <!-- Timeline -->
     <section class="content-section fade-in">
       <h2>The <span class="gradient-text">Timeline</span></h2>
-      <p>From the first prompt to a live, deployed site on GitHub Pages:</p>
+      <p>From the first prompt to a live site on GitHub Pages:</p>
       <div class="timeline-badge">One conversation. Minutes, not hours.</div>
       <p>The process looked like this:</p>
       <ol>
@@ -141,13 +141,13 @@
         <li>Commit, push, and enable GitHub Pages</li>
         <li>Verify the live site</li>
       </ol>
-      <p>The AI parallelized where possible — creating independent files simultaneously rather than sequentially. The human provided the plan and approved each step. The result is what you're looking at right now.</p>
+      <p>Where possible, the AI handled independent tasks in parallel (for example, creating separate files at the same time). The human provided the plan and approved each step. The result is what you're viewing now.</p>
     </section>
 
     <!-- Call to Action -->
     <section class="content-section fade-in" style="text-align: center; border-bottom: none; padding-bottom: 0;">
       <h2>Want to Try <span class="gradient-text">Claude Code</span>?</h2>
-      <p style="margin-bottom: var(--spacing-lg);">If this page convinced you that AI-assisted development is worth exploring, Claude Code is available today.</p>
+      <p style="margin-bottom: var(--spacing-lg);">If this page showed you the value of AI-assisted development, Claude Code is available today.</p>
       <a href="index.html" class="btn btn-primary btn-glow">Back to Demo Landing Page</a>
     </section>
 
